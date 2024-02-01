@@ -24,9 +24,23 @@ class _ExpensesState extends State<Expenses> {
         date: DateTime.now(),
         category: Category.food),
   ];
+
+  void _openAddExpenseOverlay() {
+    ///
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter ExpenseTracker'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.add),
+            onPressed: _openAddExpenseOverlay,
+          )
+        ],
+      ),
       body: Column(
         children: [
           const Text('Expenses'),
